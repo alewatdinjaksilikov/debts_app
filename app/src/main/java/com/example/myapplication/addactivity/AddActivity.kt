@@ -43,11 +43,22 @@ class AddActivity() : AppCompatActivity() {
         val givendate = given_date.text.toString()
         val getday = get_day.text.toString()
 
-        lifecycleScope.launch {
-            val user = User(0,name,Integer.parseInt(summa1),givendate,getday)
-            MyDatabase(this@AddActivity).getDao().addUser(user)
-            finish()
+        if (name.isNotEmpty()&&summa1.isNotEmpty()&&givendate.isNotEmpty()&&getday.isNotEmpty()){
+            lifecycleScope.launch {
+                val user = User(0,name,Integer.parseInt(summa1),givendate,getday)
+                MyDatabase(this@AddActivity).getDao().addUser(user)
+                finish()
+            }
+            from_to.text.clear()
+            summa.text.clear()
+            given_date.text.clear()
+            get_day.text.clear()
+            Toast.makeText(this,"Successfully...", Toast.LENGTH_LONG).show()
         }
+        else{
+            Toast.makeText(this,"Failed,please write data!", Toast.LENGTH_LONG).show()
+        }
+
 
 
     }

@@ -10,7 +10,7 @@ interface MyDao {
     suspend fun addUser(user: User)
 
     @Query("SELECT * FROM debts")
-    suspend fun getAllUsers():List<User>
+    fun getAllUsers():List<User>
 
     @Delete
     suspend fun delete(user: User)

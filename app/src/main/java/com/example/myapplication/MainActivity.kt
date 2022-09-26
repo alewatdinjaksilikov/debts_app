@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.InputBinding
 import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.addactivity.AddActivity
 import kotlinx.android.synthetic.main.activity_main.*
